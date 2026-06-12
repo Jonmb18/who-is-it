@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Final</title>
 
+<style>
+
+body{
+    background:#0a0a0a;
+    color:#d0d0d0;
+    font-family:"Courier New", monospace;
+    max-width:1100px;
+    margin:auto;
+    padding:40px;
+    line-height:1.8;
+}
+
+.arquivo{
+    border:1px solid #444;
+    background:#111;
+    padding:30px;
+}
+
+.classificacao{
+    color:#ff4d4d;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#ff4d4d;
+    margin-top:0;
+}
+
+.bloco{
+    background:#0d0d0d;
+    border:1px solid #333;
+    padding:20px;
+    margin:25px 0;
+}
+
+.identidade{
+    color:#8cff8c;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.revelacao{
+    text-align:center;
+    font-size:1.2rem;
+    color:white;
+    margin:40px 0;
+}
+
+button{
+    padding:12px 20px;
+    background:#222;
+    border:1px solid #555;
+    color:white;
+    cursor:pointer;
+    font-family:inherit;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#333;
+}
+
+.anexo{
+    display:none;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #333;
+}
+
+.anexo h2{
+    color:#8cff8c;
+}
+
+.carta{
+    width:100%;
+    border:1px solid #444;
+}
+
+audio{
+    width:100%;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    border:1px solid #444;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.galeria img:hover{
+    transform:scale(1.02);
+}
+
+.final{
+    display:none;
+    margin-top:50px;
+    text-align:center;
+    color:#bbb;
+    font-style:italic;
+    font-size:1.1rem;
+}
+
+</style>
+</head>
+<body>
+
+<div class="arquivo">
+
+<div class="classificacao">
+RELATÓRIO FINAL
+</div>
+
+<h1>Caso Encerrado</h1>
+
+<div class="bloco">
+
+Após analisar todos os registros disponíveis,
+os investigadores chegaram às seguintes conclusões:
+
+<br><br>
+
+• O primeiro contato ocorreu em 2023.<br>
+• O Arquivista permaneceu ativo por escolha.<br>
+• A Pessoa de Interesse foi considerada insubstituível.<br>
+• Havia confiança entre ambas as partes.<br>
+• O caso permaneceu aberto pela ausência de certeza.
+
+</div>
+
+<div class="bloco">
+
+Identidade do Arquivista:
+
+<div class="identidade">
+CONFIRMADA
+</div>
+
+<br>
+
+Jonathan
+
+</div>
+
+<div class="bloco">
+
+Identidade da Pessoa de Interesse:
+
+<div class="identidade">
+CONFIRMADA
+</div>
+
+<br>
+
+Anna Julia
+
+</div>
+
+<div class="revelacao">
+
+Os investigadores descobriram que
+nunca estiveram investigando um caso.
+
+<br><br>
+
+Estavam investigando uma história.
+
+</div>
+
+<button onclick="abrirCarta()">
+Abrir Anexo 01
+</button>
+
+<div id="carta" class="anexo">
+
+<h2>ANEXO 01</h2>
+
+<p>Carta Recuperada</p>
+
+<img
+src="img/carta.jpg"
+alt="Carta"
+class="carta">
+
+<br><br>
+
+<button onclick="abrirAudio()">
+Abrir Anexo 02
+</button>
+
+</div>
+
+<div id="audio" class="anexo">
+
+<h2>ANEXO 02</h2>
+
+<p>Gravação Recuperada</p>
+
+<audio controls>
+    <source src="audio/audio-final.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+</audio>
+
+<br><br>
+
+<button onclick="abrirGaleria()">
+Abrir Anexo 03
+</button>
+
+</div>
+
+<div id="galeria" class="anexo">
+
+<h2>ANEXO 03</h2>
+
+<p>Caixa de Memórias</p>
+
+<div class="galeria">
+
+<img src="img/memoria1.jpg" alt="Memória 1">
+<img src="img/memoria2.jpg" alt="Memória 2">
+<img src="img/memoria3.jpg" alt="Memória 3">
+<img src="img/memoria4.jpg" alt="Memória 4">
+<img src="img/memoria5.jpg" alt="Memória 5">
+<img src="img/memoria6.jpg" alt="Memória 6">
+
+</div>
+
+<br>
+
+<button onclick="mostrarFinal()">
+Encerrar Relatório
+</button>
+
+</div>
+
+<div id="final" class="final">
+
+Fim do relatório.
+
+<br><br>
+
+Obrigado por fazer parte da minha história.
+<br><br><br>
+Eu te amo 1 milhão de vezes.
+E espero poder continuar amando outros milhões.
+❤️
+
+</div>
+
+</div>
+
+<script>
+
+function abrirCarta() {
+
+    document.getElementById("carta").style.display = "block";
+
+    window.scrollTo({
+        top: document.getElementById("carta").offsetTop,
+        behavior: "smooth"
+    });
+
+}
+
+function abrirAudio() {
+
+    document.getElementById("audio").style.display = "block";
+
+    window.scrollTo({
+        top: document.getElementById("audio").offsetTop,
+        behavior: "smooth"
+    });
+
+}
+
+function abrirGaleria() {
+
+    document.getElementById("galeria").style.display = "block";
+
+    window.scrollTo({
+        top: document.getElementById("galeria").offsetTop,
+        behavior: "smooth"
+    });
+
+}
+
+function mostrarFinal() {
+
+    document.getElementById("final").style.display = "block";
+
+    window.scrollTo({
+        top: document.getElementById("final").offsetTop,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>

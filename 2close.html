@@ -1,20 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Pista 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo 001</title>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #d0d0d0;
+            font-family: "Courier New", monospace;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .arquivo {
+            border: 1px solid #444;
+            padding: 30px;
+            background-color: #111;
+        }
+
+        h1 {
+            color: #ff4d4d;
+            margin-top: 0;
+        }
+
+        .classificacao {
+            color: #ff4d4d;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .observacao {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 3px solid #888;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        input {
+            margin-top: 25px;
+            width: 250px;
+            padding: 10px;
+            background: #222;
+            border: 1px solid #555;
+            color: white;
+            font-family: inherit;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            border: 1px solid #666;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .erro {
+            color: #ff6666;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Pista 1</h1>
+<div class="arquivo">
 
-<p>
-Você recebeu uma mensagem:
-</p>
+    <div class="classificacao">
+        ARQUIVO CONFIDENCIAL // CASO Nº 001
+    </div>
 
-<blockquote>
-"Às vezes a pessoa que procuramos está mais perto do que imaginamos."
-</blockquote>
+    <h1>Relatório Preliminar</h1>
+
+    <p>
+        O indivíduo investigado iniciou contato com o alvo há aproximadamente três anos.
+    </p>
+
+    <p>
+        Registros históricos indicam que o primeiro encontro ocorreu em ambiente digital.
+    </p>
+
+    <hr style="margin:30px 0; border-color:#333;">
+
+    <p><strong>Observações coletadas:</strong></p>
+
+    <p>
+        <strong>D</strong>urante o período analisado, o suspeito demonstrou interesse incomum pelo alvo.
+    </p>
+
+    <p>
+        <strong>I</strong>nvestigações adicionais foram conduzidas para localizar a origem do contato.
+    </p>
+
+    <p>
+        <strong>S</strong>inais apontam que a comunicação ocorreu por meio de uma plataforma específica.
+    </p>
+
+    <p>
+        <strong>C</strong>ontudo, muitos registros permanecem incompletos.
+    </p>
+
+    <p>
+        <strong>O</strong>bservadores relatam que o contato se tornou frequente rapidamente.
+    </p>
+
+    <p>
+        <strong>R</strong>elatórios complementares estão sendo analisados.
+    </p>
+
+    <p>
+        <strong>D</strong>ados adicionais serão liberados conforme o avanço da investigação.
+    </p>
+
+    <div class="observacao">
+        Anotação deixada por um investigador anterior:
+        <br><br>
+        "Quando um relatório parece não dizer nada,
+        observe cuidadosamente o início de cada observação."
+    </div>
+
+    <br>
+
+    <label>Plataforma identificada:</label><br>
+
+    <input type="text" id="resposta" autocomplete="off">
+
+    <button onclick="verificar()">
+        Confirmar
+    </button>
+
+    <div id="erro" class="erro"></div>
+
+</div>
+
+<script>
+function verificar() {
+
+    const resposta = document
+        .getElementById("resposta")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (resposta === "discord") {
+
+        window.location.href = "pista2.html";
+
+    } else {
+
+        document.getElementById("erro").innerText =
+            "Resposta incorreta. Revise as evidências.";
+    }
+}
+</script>
 
 </body>
 </html>

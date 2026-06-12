@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquivo 006</title>
+
+<style>
+
+body{
+    background:#0a0a0a;
+    color:#d0d0d0;
+    font-family:"Courier New", monospace;
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    line-height:1.8;
+}
+
+.arquivo{
+    border:1px solid #444;
+    background:#111;
+    padding:30px;
+}
+
+.classificacao{
+    color:#ff4d4d;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#ff4d4d;
+    margin-top:0;
+}
+
+.progresso{
+    color:#8cff8c;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.carta{
+    background:#0d0d0d;
+    border:1px solid #333;
+    padding:25px;
+    margin:25px 0;
+    font-style:italic;
+}
+
+.descartado{
+    margin:12px 0;
+    color:#666;
+    text-decoration:line-through;
+}
+
+.observacao{
+    margin-top:25px;
+    padding:15px;
+    border-left:3px solid #888;
+    color:#bbb;
+    font-style:italic;
+}
+
+input{
+    margin-top:20px;
+    padding:10px;
+    width:300px;
+    background:#222;
+    border:1px solid #555;
+    color:white;
+    font-family:inherit;
+}
+
+button{
+    padding:10px 15px;
+    background:#333;
+    border:1px solid #666;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#444;
+}
+
+.erro{
+    color:#ff6666;
+    margin-top:10px;
+}
+
+.sucesso{
+    color:#8cff8c;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.letra{
+    color:#ffffff;
+    font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="arquivo">
+
+<div class="classificacao">
+ARQUIVO CONFIDENCIAL // CASO Nº 006
+</div>
+
+<h1>Reconstrução Parcial</h1>
+
+<div class="progresso">
+Reconstrução da carta: 84%
+</div>
+
+<p>
+Novos fragmentos foram recuperados.
+</p>
+
+<p>
+O conteúdo sugere que o Arquivista teve diversas
+oportunidades de encerrar o caso.
+</p>
+
+<p>
+Entretanto, ele optou por continuar.
+</p>
+
+<div class="carta">
+
+Eu poderia ter encerrado tudo diversas vezes.<br><br>
+
+Poderia ter simplesmente seguir em frente.<br><br>
+
+Poderia ter aceitado o silêncio.<br><br>
+
+Mas nenhuma dessas opções me pareceu correta.
+
+</div>
+
+<div class="observacao">
+
+Os <span class="letra">E</span>specialistas acreditam que uma palavra
+resume o motivo pelo qual o Arquivista
+continuou a investigação.
+
+<br><br>
+
+O <span class="letra">S</span>ilêncio por si só não explica a persistência observada.
+
+<br><br>
+
+As <span class="letra">C</span>onclusões anteriores foram reavaliadas.
+
+<br><br>
+
+Nenhuma <span class="letra">O</span>corrência sugere compulsão ou obsessão.
+
+<br><br>
+
+Os investigadores consideraram que tudo poderia ter sido apenas uma rotina,
+mas essa hipótese foi descartada após uma análise mais profunda.
+
+<br><br>
+
+O Arquivista parece ter agido de forma totalmente
+<span class="letra">L</span>ivre.
+
+<br><br>
+
+Todas as <span class="letra">H</span>ipóteses restantes foram revisadas.
+
+<br><br>
+
+A nova <span class="letra">A</span>valiação aponta para uma conclusão diferente.
+
+</div>
+
+<br>
+
+<div class="descartado">
+[HIPÓTESE DESCARTADA] ROTINA
+</div>
+
+<div class="descartado">
+[HIPÓTESE DESCARTADA] OBRIGAÇÃO
+</div>
+
+<div class="descartado">
+[HIPÓTESE DESCARTADA] CURIOSIDADE
+</div>
+
+<div class="descartado">
+[HIPÓTESE DESCARTADA] ACASO
+</div>
+
+<br>
+
+<label>
+Qual palavra resume a motivação do Arquivista?
+</label>
+<br>
+
+<input
+    type="text"
+    id="resposta"
+    autocomplete="off">
+
+<button onclick="verificar()">
+Confirmar
+</button>
+
+<div id="erro" class="erro"></div>
+<div id="sucesso" class="sucesso"></div>
+
+</div>
+
+<script>
+
+function verificar(){
+
+    const resposta = document
+        .getElementById("resposta")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if(
+        resposta === "escolha"
+    ){
+
+        sessionStorage.setItem(
+            "motivacaoArquivista",
+            "escolha"
+        );
+
+        document.getElementById("erro").innerText = "";
+
+        document.getElementById("sucesso").innerHTML =
+            "Palavra confirmada.<br><br>" +
+            "Reconstrução da carta: 91%";
+
+        setTimeout(() => {
+
+            window.location.href = "hot.html";
+
+        }, 2500);
+
+    }else{
+
+        document.getElementById("erro").innerText =
+            "Resposta incorreta. Revise cuidadosamente as observações.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

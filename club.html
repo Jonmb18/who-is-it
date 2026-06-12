@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo 002</title>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #d0d0d0;
+            font-family: "Courier New", monospace;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .arquivo {
+            border: 1px solid #444;
+            padding: 30px;
+            background-color: #111;
+        }
+
+        .classificacao {
+            color: #ff4d4d;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ff4d4d;
+            margin-top: 0;
+        }
+
+        .evidencia {
+            margin: 30px 0;
+            padding: 20px;
+            text-align: center;
+            border: 1px dashed #555;
+            background-color: #0c0c0c;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            color: #ffffff;
+        }
+
+        .observacao {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 3px solid #888;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        input {
+            margin-top: 25px;
+            width: 250px;
+            padding: 10px;
+            background: #222;
+            border: 1px solid #555;
+            color: white;
+            font-family: inherit;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            border: 1px solid #666;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .erro {
+            color: #ff6666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="arquivo">
+
+    <div class="classificacao">
+        ARQUIVO CONFIDENCIAL // CASO Nº 002
+    </div>
+
+    <h1>Fragmento Recuperado</h1>
+
+    <p>
+        Após localizar o ambiente onde o primeiro contato ocorreu,
+        os investigadores encontraram um fragmento de mensagem
+        aparentemente relacionado ao suspeito.
+    </p>
+
+    <p>
+        O conteúdo estava protegido por uma cifra simples.
+    </p>
+
+    <div class="evidencia">
+        DUYLYLVWD
+    </div>
+
+    <div class="observacao">
+        Anotação encontrada no relatório original:
+        <br><br>
+        "O responsável pela criptografia parecia ter uma estranha
+        obsessão pelo número 3."
+    </div>
+
+    <br>
+
+    <label>Codinome identificado:</label><br>
+
+    <input type="text" id="resposta" autocomplete="off">
+
+    <button onclick="verificar()">
+        Confirmar
+    </button>
+
+    <div id="erro" class="erro"></div>
+
+</div>
+
+<script>
+function verificar() {
+
+    const resposta = document
+        .getElementById("resposta")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (resposta === "arquivista") {
+
+        window.location.href = "pista3.html";
+
+    } else {
+
+        document.getElementById("erro").innerText =
+            "Resposta incorreta. Talvez a anotação contenha a chave.";
+    }
+}
+</script>
+
+</body>
+</html>

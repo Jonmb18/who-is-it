@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Arquivo Confidencial</title>
+
+    <style>
+        body {
+            background: #111;
+            color: #ddd;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #ff4d4d;
+        }
+
+        .caixa {
+            border: 1px solid #444;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ARQUIVO CONFIDENCIAL</h1>
+
+<div class="caixa">
+    <p>
+        Investigador,
+        recebemos informações sobre um caso extremamente importante.
+    </p>
+
+    <p>
+        Apenas pessoas capazes de resolver os enigmas poderão descobrir a verdade.
+    </p>
+
+    <p>
+        Digite a resposta correta:
+    </p>
+
+    <input id="resposta">
+    <button onclick="verificar()">Enviar</button>
+</div>
+
+<script>
+function verificar() {
+
+    let resposta = document
+        .getElementById("resposta")
+        .value
+        .toLowerCase()
+        .trim();
+
+    if(resposta === "amor"){
+        window.location.href = "pista1.html";
+    } else {
+        alert("Resposta incorreta.");
+    }
+}
+</script>
+
+</body>
+</html>

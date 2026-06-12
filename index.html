@@ -40,16 +40,20 @@
 
 <div class="caixa">
     <p>
-        Investigador,
-        recebemos informações sobre um caso extremamente importante.
+        Investigadora Aika,
+        recebemos informações sobre um indivíduo suspeito.
     </p>
 
     <p>
-        Apenas pessoas capazes de resolver os enigmas poderão descobrir a verdade.
+        Há três anos ele vem mantendo contato constante com um alvo específico.
     </p>
 
     <p>
-        Digite a resposta correta:
+        Seu trabalho é descobrir sua identidade.
+    </p>
+
+    <p>
+        Responda com "Aceito" para prosseguir para sua missão.
     </p>
 
     <input id="resposta">
@@ -65,8 +69,8 @@ function verificar() {
         .toLowerCase()
         .trim();
 
-    if(resposta === "amor"){
-        window.location.href = "pista1.html";
+    if(resposta === "Aceito"){
+        window.location.href = "2close.html";
     } else {
         alert("Resposta incorreta.");
     }

@@ -170,7 +170,9 @@ function verificar() {
 
         sessionStorage.setItem("palavraChave", "espera");
 
-        window.location.href = "past.html";
+        setTimeout(() => {
+            window.location.href = "transicao.html?fase=5";
+        }, 1200);
 
     } else {
 

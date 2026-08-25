@@ -224,15 +224,10 @@ function verificar(){
 
         document.getElementById("erro").innerText = "";
 
-        document.getElementById("sucesso").innerHTML =
-            "Palavra confirmada.<br><br>" +
-            "Reconstrução da carta: 99%";
-
+        document.getElementById("sucesso").innerText = "Palavra confirmada.";
         setTimeout(() => {
-
-            window.location.href = "golpe.html";
-
-        }, 2500);
+            window.location.href = "transicao.html?fase=7";
+        }, 1200);
 
     }else{
 

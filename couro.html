@@ -216,15 +216,10 @@ function verificar(){
 
         document.getElementById("erro").innerText = "";
 
-        document.getElementById("sucesso").innerHTML =
-            "Palavra confirmada.<br><br>" +
-            "Reconstrução da carta: 76%";
-
+        document.getElementById("sucesso").innerText = "Palavra confirmada.";
         setTimeout(() => {
-
-            window.location.href = "/transicao/transicao.html?fase=6";
-
-        }, 2500);
+            window.location.href = "transicao.html?fase=6";
+        }, 1200);
 
     }else{
 

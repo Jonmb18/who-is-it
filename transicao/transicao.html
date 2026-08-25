@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>...</title>
+<style>
+  /* mesmo fundo do overlay, para o fade final não piscar */
+  html,body{
+    margin:0; height:100%;
+    background:radial-gradient(120% 90% at 50% 34%,#241A16 0%,#14100F 62%,#0B0808 100%);
+    color:#F2E8D8;
+    font-family:'Iowan Old Style',Georgia,serif;
+  }
+  /* só aparece se o JS não rodar, para ninguém ficar preso */
+  #saida{
+    position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+    font-size:15px; letter-spacing:.08em; color:rgba(242,232,216,.7);
+    text-decoration:none; border-bottom:1px solid rgba(201,154,78,.6);
+    padding-bottom:3px;
+  }
+  #saida.escondido{display:none}
+</style>
+</head>
+<body>
+
+<a id="saida" href="#">continuar</a>
+
+<script src="carta-reconstruida.js?v=1"></script>
+<script>
+/* ------------------------------------------------------------------
+   AJUSTE AQUI. Uma entrada por transição.
+
+   "de"      = porcentagem que aparecia na fase que ela acabou de fazer
+   "para"    = porcentagem que vai aparecer na próxima fase
+   "proximo" = nome exato do arquivo da próxima página
+
+   Atenção: no GitHub Pages maiúscula e minúscula fazem diferença.
+------------------------------------------------------------------- */
+var FASES = {
+  6: { de: 64, para: 76, proximo: 'fase7.html' },
+  7: { de: 76, para: 88, proximo: 'fase8.html' },
+  8: { de: 88, para: 96, proximo: 'fase9.html' }
+  // A fase 9 leva direto para a revelação, sem transição,
+  // para a carta inteira aparecer só lá. Se quiser uma aqui
+  // também, é só adicionar e deixar "para" abaixo de 100.
+};
+
+var params = new URLSearchParams(location.search);
+var dados  = FASES[params.get('fase')];
+var saida  = document.getElementById('saida');
+
+if (!dados) {
+  saida.href = 'index.html';
+  saida.textContent = 'voltar ao início';
+} else {
+  saida.href = dados.proximo;
+  saida.classList.add('escondido');
+
+  // deixa a próxima página já baixada, o corte fica instantâneo
+  var pf = document.createElement('link');
+  pf.rel = 'prefetch';
+  pf.href = dados.proximo;
+  document.head.appendChild(pf);
+
+  CartaReconstruida
+    .transicao({ de: dados.de, para: dados.para })
+    .then(function () {
+      // replace: o botão voltar não traz de volta para a transição
+      location.replace(dados.proximo);
+    });
+}
+</script>
+</body>
+</html>

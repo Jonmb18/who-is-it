@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teste da transição</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh;
+    background:radial-gradient(120% 80% at 50% 0%,#241A16 0%,#14100F 60%,#0B0808 100%);
+    color:#F2E8D8; font-family:'Iowan Old Style',Georgia,serif;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:28px; padding:40px 22px; text-align:center;
+  }
+  h1{font-size:clamp(20px,5vw,26px); font-weight:400; margin:0}
+  p{margin:0; max-width:40ch; line-height:1.6; font-size:14px; color:rgba(242,232,216,.55)}
+  .botoes{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+  button{
+    font-family:inherit; font-size:14px; letter-spacing:.05em;
+    padding:12px 18px; border-radius:2px; cursor:pointer;
+    color:#F2E8D8; background:transparent; border:1px solid rgba(242,232,216,.28);
+    transition:border-color 200ms ease, background 200ms ease;
+  }
+  button:hover{border-color:#C99A4E; background:rgba(201,154,78,.08)}
+  button:focus-visible{outline:2px solid #C99A4E; outline-offset:3px}
+</style>
+</head>
+<body>
+
+<h1>Teste da transição</h1>
+<p>Cada botão simula a passagem de uma fase para a próxima. Clique na ordem para ver o encaixe continuar de onde parou.</p>
+
+<div class="botoes">
+  <button data-de="64" data-para="76">6 → 7</button>
+  <button data-de="76" data-para="88">7 → 8</button>
+  <button data-de="88" data-para="96">8 → 9</button>
+</div>
+
+<script src="carta-reconstruida.js"></script>
+<script>
+  document.querySelectorAll('button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      CartaReconstruida.transicao({
+        de: Number(b.dataset.de),
+        para: Number(b.dataset.para)
+      });
+    });
+  });
+</script>
+</body>
+</html>
